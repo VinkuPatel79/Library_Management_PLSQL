@@ -1,0 +1,48 @@
+
+
+
+***********LIBRAY MANAGEMENT ***********************
+
+1>create table lib (bookid references books (bookid), publication varchar(10) not null, noofcopies number not null);
+
+     insert into (1,'Begginers',15);
+     insert into (2,'MC Graw Hill',15);
+
+
+
+2> create table books ( bookid number primary key, bookname varchar(15) NOT NULL,available varchar(10) NOT NULL,author varchar(10) NOT NULL);
+
+    insert into(1,'DBMS','YES','Rajiv Chopra');
+    insert into(2,'DS','YES','Narasimha Karumanchi');
+
+
+  
+3>Create table member (memb_id number primary key,name varchar2(10),address varchar2(10),phone_no number(10));
+
+   insert into member values(101,'Vinku patel','Gujrat',1234567891);
+   insert into member values(102,'Varun patel','Gujrat',1234567892);
+
+
+4>create table subscription ( bookid references books(bookid),memb_id references member(memb_id) not null, do_sub date not null);
+
+   insert into  subscription values (1,101,'7-SEP-2022');
+   insert into  subscription values(2,101,'7-SEP-2022);
+
+5>create  table returns (bookid references books(bookid),memb_id references member(memb_id) not null,return_date date);
+
+   insert into  returns values (1,101,'15-SEP-2022');
+   insert into  returns values (2,102,'10-oct-2022');
+
+
+6>create table fine(memb_id references member(memb_id) not null,amount number);
+
+   select * from fine;
+ [  MEMB_ID  AMOUNT
+    102       30  ]
+
+
+
+ 
+
+
+ 
